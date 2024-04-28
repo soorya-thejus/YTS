@@ -1,0 +1,49 @@
+
+html {
+	height:100%;
+}
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+header {
+	background-color: #2f4f4f;
+	color: #fff;
+	padding: 20px;
+}
+
+h1 {
+	margin: 0;
+	font-size: 36px;
+}
+
+main {
+	padding: 20px;
+}
+
+.cta-button {
+	background-color: #008CBA;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-decoration: none;
+	display: block;
+	position: absolute;
+	left:45%;
+}
+
+.cta-button:hover {
+	background-color: #006d87;
+}
+footer{
+	background-color: #f2f2f2;
+	padding: 20px;
+	text-align: center;
+	display: block;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+} 

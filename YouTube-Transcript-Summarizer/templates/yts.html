@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Transcript Summarizer</title>
+    <link rel="stylesheet" type="text/css" href="../static/yts.css">
+</head>
+<body>
+    <header>
+        <h1>YouTube Transcript Summarizer</h1>
+    </header>
+    
+    <main>
+        <h2>Enter a YouTube Video Link:</h2>
+        
+        <form action="{{ url_for('yts') }}" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="text" id="video-link" name="video-link" placeholder="Enter link here..">
+            <button type="submit" class="summarizeButton">Summarize</button>        
+        </form>
+            
+        <!-- Display error message if there is one -->
+        <div id="error">
+            {% if error %}
+                <p>{{ error }}</p>
+            {% endif %}
+        </div>
+
+        <!-- Display summarized text if there is one -->
+        <div id="summary">
+            {% if summary %}
+                <textarea>{{ summary }}</textarea>
+                <form action="{{ url_for('download') }}" method="post">
+                    <input type="hidden" name="summary" value="{{ summary }}">
+                    <button type="submit" class="button1">
+                        <span class="button_lg">
+                            <span class="button_sl"></span>
+                            <span class="button_text">Download Now</span>
+                        </span>
+                    </button>                    
+                </form>
+            {% endif %}
+        </div>
+    </main>
+    
+    <footer>
+        <p id="foot">&copy; 2023 YouTube Transcript Summarizer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
